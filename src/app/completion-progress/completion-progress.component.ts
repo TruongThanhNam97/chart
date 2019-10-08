@@ -33,7 +33,75 @@ export class CompletionProgressComponent implements OnInit {
   constructor(private completionProgressService: CompletionProgressService) {}
 
   ngOnInit() {
-    console.log(document.documentElement.clientWidth);
+    
+    /* Init chart */
+    this.myChart = echarts.init(document.getElementById("chart"));
+    /* List events to listen */
+    this.myChart.on("dataZoom", (e: any) => {
+      if (e.batch) {
+        const [firstItem] = e.batch;
+        if (firstItem.end - firstItem.start !== 100) {
+          this.myChart.setOption({
+            dataZoom: [
+              {
+                show: true
+              },
+              {
+                show: true
+              }
+            ]
+          });
+        } else {
+          this.myChart.setOption({
+            dataZoom: [
+              {
+                show: false
+              },
+              {
+                show: false
+              }
+            ]
+          });
+        }
+      } else {
+        if (e.end - e.start !== 100) {
+          this.myChart.setOption({
+            dataZoom: [
+              {
+                show: true
+              },
+              {
+                show: true
+              }
+            ]
+          });
+        } else {
+          this.myChart.setOption({
+            dataZoom: [
+              {
+                show: false
+              },
+              {
+                show: false
+              }
+            ]
+          });
+        }
+      }
+    });
+    this.myChart.on("restore", (e: any) => {
+      this.myChart.setOption({
+        dataZoom: [
+          {
+            show: false
+          },
+          {
+            show: false
+          }
+        ]
+      });
+    });
+
     if (document.documentElement.clientWidth <= this.ipadWidth) {
       this.fontSizeTitle = 20;
       this.fontSizeSubtitle = 10;
@@ -363,7 +431,6 @@ export class CompletionProgressComponent implements OnInit {
         acc.push(obj);
         return acc;
       }, []);
-      console.log(this.data);
       this.loadChart(
         this.arrTitle,
         this.arrName,
@@ -390,7 +457,6 @@ export class CompletionProgressComponent implements OnInit {
     startEndDate: any,
     printedDate: any
   ) {
-    this.myChart = echarts.init(document.getElementById("chart"));
     const options = {
       title: [
         {
@@ -524,13 +590,8 @@ export class CompletionProgressComponent implements OnInit {
         axisLabel: {
           rotate: -65,
           margin: 10,
-          // interval: 6,
           showMaxLabel: true,
           showMinLabel: true
-        },
-        formatter: function(value, index) {
-          console.log(value);
-          return `${value} ahi`;
         }
       },
       dataZoom: [
@@ -544,27 +605,25 @@ export class CompletionProgressComponent implements OnInit {
           showDataShadow: false,
           showDetail: false,
           labelPrecision: 20,
-          show: true,
+          show: false,
           height: 15
         },
         {
           type: "slider",
           yAxisIndex: 0,
           filterMode: "empty",
-          show: true,
+          show: false,
           width: 15
         },
         {
           type: "inside",
           xAxisIndex: 0,
           filterMode: "empty",
-          maxValueSpan : 5
         },
         {
           type: "inside",
           yAxisIndex: 0,
-          filterMode: "empty",
-          maxValueSpan : 5
+          filterMode: "empty"
         }
       ],
       yAxis: {
@@ -642,9 +701,9 @@ export class CompletionProgressComponent implements OnInit {
 
   loadDataFromDB() {
     this.resetData();
+    this.myChart.showLoading();
     this.completionProgressService.getData().subscribe((source: any) => {
       const dataSource = source.payload.val();
-      console.log(dataSource);
       const result = Object.keys(dataSource).map(k => dataSource[k])[0];
       result.data.map(item => {
         this.arrActual = [...this.arrActual, item.actual];
@@ -668,6 +727,7 @@ export class CompletionProgressComponent implements OnInit {
         this.arrStartEndDate,
         this.printedDate
       );
+      this.myChart.hideLoading();
     });
   }
 
