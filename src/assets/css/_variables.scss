@@ -1,0 +1,109 @@
+/**
+ *  Define all variables that used in stylesheet
+ */ 
+
+$fa-font-path: "../../node_modules/font-awesome/fonts";
+
+// Font family
+$primary-font: 'Segoe UI', Arial, sans-serif;
+$secondary-font: 'Segoe UI', Arial, sans-serif;
+
+// Font size
+$primary-font-size: 12px;
+$secondary-font-size: 14px;
+$font-size-h1: 2.6em;
+$font-size-h2: 2em;
+$font-size-h3: 1.8em;
+$font-size-h4: 1.5em;
+$font-size-h5: 1em;
+$font-size-h6: 0.8em;
+
+// Font weight
+$light: 300;
+$normal: 400;
+$bold: 700;
+
+// Should use below color schema and remove "Primary Color" and "Secondary Color"
+$color-red: #cc0000;
+$color-1: #363636;
+$color-2: #43494e;
+$color-3: #6d757a;
+$color-4: #7f878d;
+$color-5: #ccc;
+$color-6: #d4dadd;
+$color-7: #eceff0;
+
+// Primary color
+$primary-red: #cc0000;
+$primary-black: #000000;
+$primary-grey: #707070;
+$primary-dark-grey: #292829;
+$primary-light-grey: #535154;
+$primary-light-grey-2: #777;
+$primary-light-grey-3: #e4e4e4;
+
+// Secondary color
+$secondary-white: #ffffff;
+$secondary-blue: #3b86ff;
+$secondary-red: #f1322e;
+$secondary-green: #32e83e;
+$secondary-yellow: #e9da00;
+$secondary-yellow-warning: #fff200;
+$secondary-grey: #d6d6d6;
+$secondary-dark-grey: #a8a8a8;
+$secondary-light-grey: #fafafa;
+$secondary-grey-blue: #6d757a;
+$secondary-grey-blue-2: lighten($secondary-grey-blue, 10%);
+
+//sidebar-navigation
+$sidebar-nav-color: #494848;
+
+//in-progress
+$inprogress-color: #CCCCCC;
+//approve
+$submit-color: #FF9900;
+//approve
+$approve-color: #85B02E;
+//approve
+$reject-color: #cc0033;
+
+// Notification text
+$state-danger-text: $secondary-red;
+
+// Input
+$input-background-color: $secondary-white;
+
+// Image
+$chevron-down-black-image: '../../apps/vida/src/assets/images/chevron_bottom.svg';
+$delete-icon-image: '../../apps/vida/src/assets/images/deleteIcon.png';
+
+$sidebar-width: 200px;
+
+
+$table-color: (
+    'header-primary': $color-3,
+    'header-lighter': $color-4,
+    'row-odd': $color-6,
+    'row-even': #fff,
+    'border-primary': #fff,
+    'border-header': $color-1
+);
+@function table-color($key) {
+    @return map-get($table-color, $key);
+};
+
+$tab-color: (
+    'bg': $color-2
+);
+@function tab-color($key) {
+    @return map-get($table-color, $key);
+};
+
+// Base-64 Image
+$chevron-down-black: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNSA5LjI1Ij4NCiAgPGRlZnM+DQogICAgPHN0eWxlPg0KICAgICAgLmNscy0xIHsNCiAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOw0KICAgICAgICBvcGFjaXR5OiAwLjU0Ow0KICAgICAgfQ0KICAgIDwvc3R5bGU+DQogIDwvZGVmcz4NCiAgPGcgaWQ9IkNvbHVtbl9Tb3J0IiBkYXRhLW5hbWU9IkNvbHVtbiBTb3J0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTAyNi41IC0xMzgwKSI+DQogICAgPHBhdGggaWQ9InBhdGgiIGNsYXNzPSJjbHMtMSIgZD0iTTE5LjI1LDguNiwxMy41LDE0LjM1LDcuNzUsOC42LDYsMTAuMzVsNy41LDcuNSw3LjUtNy41WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAyMC41IDEzNzEuNCkiLz4NCiAgPC9nPg0KPC9zdmc+DQo=';
+$chevron-down-white: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNi41NCA4LjQiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICAuY2xzLTEgew0KICAgICAgICBmaWxsOiAjZmZmOw0KICAgICAgICBzdHJva2U6ICNmZmY7DQogICAgICAgIGZpbGwtcnVsZTogZXZlbm9kZDsNCiAgICAgIH0NCiAgICA8L3N0eWxlPg0KICA8L2RlZnM+DQogIDxwYXRoIGlkPSJwYXRoIiBjbGFzcz0iY2xzLTEiIGQ9Ik0xOS4xNjksOC42bC01LjcxNSw0LjQzNUw3LjczOSw4LjYsNiw5Ljk1bDcuNDU0LDUuNzg1TDIwLjkwOSw5Ljk1WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUuMTg1IC03Ljk2NykiLz4NCjwvc3ZnPg0K';
+$browse-file-icon: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAyMCI+DQogIDxkZWZzPg0KICAgIDxzdHlsZT4NCiAgICAgIC5jbHMtMSB7DQogICAgICAgIGZpbGw6ICM2ODY4Njg7DQogICAgICB9DQogICAgPC9zdHlsZT4NCiAgPC9kZWZzPg0KICA8cGF0aCBpZD0iaWNfZmluZF9pbl9wYWdlXzI0cHgiIGNsYXNzPSJjbHMtMSIgZD0iTTIwLDE5LjU5VjhMMTQsMkg2QTIsMiwwLDAsMCw0LjAxLDRMNCwyMGEyLDIsMCwwLDAsMS45OSwySDE4YTEuOTgyLDEuOTgyLDAsMCwwLDEuMTktLjRsLTQuNDMtNC40M0E1LDUsMCwxLDEsMTcsMTNhNC45NzksNC45NzksMCwwLDEtLjgzLDIuNzVaTTksMTNhMywzLDAsMSwwLDMtM0EzLDMsMCwwLDAsOSwxM1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00IC0yKSIvPg0KPC9zdmc+DQo=';
+$upload-icon: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOS41NTYgMTYiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICAuY2xzLTEgew0KICAgICAgICBmaWxsOiAjNjg2ODY4Ow0KICAgICAgfQ0KICAgIDwvc3R5bGU+DQogIDwvZGVmcz4NCiAgPHBhdGggaWQ9ImljX3N5c3RlbV91cGRhdGVfYWx0XzI0cHgiIGNsYXNzPSJjbHMtMSIgZD0iTTEwLjc3OCwxNS4wNTYsMTQuMzMzLDExLjVIMTEuNjY3di04SDkuODg5djhINy4yMjJabTgtMTEuNTU2SDEzLjQ0NFY1LjI2OWg1LjMzM1YxNy43NGgtMTZWNS4yNjlIOC4xMTFWMy41SDIuNzc4QTEuNzgzLDEuNzgzLDAsMCwwLDEsNS4yNzhWMTcuNzIyQTEuNzgzLDEuNzgzLDAsMCwwLDIuNzc4LDE5LjVoMTZhMS43ODMsMS43ODMsMCwwLDAsMS43NzgtMS43NzhWNS4yNzhBMS43ODMsMS43ODMsMCwwLDAsMTguNzc4LDMuNVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwLjU1NiAxOS41KSByb3RhdGUoMTgwKSIvPg0KPC9zdmc+DQo=';
+
+//Screen vida zoom
+$screen-zoom:                  1520px !default;

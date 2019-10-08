@@ -1,0 +1,53 @@
+<nav id="sidebar-nav" [ngClass]="{'active': mode}">
+  <div class="background-left"></div>
+  <ul>
+    <li class="external-icon m-top-1" style="height: 18px"></li>
+    <li class="external-icon m-top-1" (click)="onChangeMode()">
+      <a href="" routerLink="/recipes" [routerLinkActive]="['active']">
+        <img
+          src="../../../../assets/images/activeJobs.png"
+          class="external-icon-img"
+        />
+        <span class="navigator-title">Recipes</span>
+      </a>
+    </li>
+    <li class="external-icon lite-spacing" (click)="onChangeMode()">
+      <a href="" routerLink="/shopping-list" [routerLinkActive]="['active']">
+        <img
+          src="../../../../assets/images/savedJobs.png"
+          class="external-icon-img "
+        />
+        <span class="navigator-title"> Shopping List</span>
+      </a>
+    </li>
+    <li class="external-icon lite-spacing" (click)="onChangeMode()">
+      <a href="" routerLink="/auth" [routerLinkActive]="['active']">
+        <img
+          src="../../../../assets/images/savedJobs.png"
+          class="external-icon-img "
+        />
+        <span class="navigator-title">Authenticate</span>
+      </a>
+    </li>
+    <li class="external-icon lite-spacing" (click)="onChangeMode()">
+      <a href="" routerLink="/performance-plot" [routerLinkActive]="['active']">
+        <img
+          src="../../../../assets/images/savedJobs.png"
+          class="external-icon-img "
+        />
+        <span class="navigator-title">Performance Plot</span>
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li class="external-icon lite-spacing">
+      <a style="cursor: pointer;" (click)="onLogout()">
+        <img
+          src="../../../../assets/images/savedJobs.png"
+          class="external-icon-img "
+        />
+        <span class="navigator-title">LogOut</span>
+      </a>
+    </li>
+  </ul>
+</nav>
