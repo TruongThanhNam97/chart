@@ -4,6 +4,7 @@ import * as echarts from "echarts";
 import * as XLSX from "xlsx";
 import { Subject, fromEvent } from "rxjs";
 import { takeUntil, debounceTime } from "rxjs/operators";
+import undefined = require("firebase/empty-import");
 
 @Component({
   selector: "app-completion-progress",
@@ -114,7 +115,7 @@ export class CompletionProgressComponent implements OnInit {
     fromEvent(window, "resize")
       .pipe(takeUntil(this.destroySubscription$))
       .subscribe(v => {
-        if (this.myChart !== null && this.myChart !== undefined) {
+        if (this.myChart !== null && this.myChart !== undefined && this.myChart.getOption() !== undefined  ) {
           if (document.documentElement.clientWidth <= this.ipadWidth) {
             this.fontSizeTitle = 20;
             this.fontSizeSubtitle = 10;
