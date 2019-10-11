@@ -4,7 +4,7 @@ import * as echarts from "echarts";
 import * as XLSX from "xlsx";
 import { Subject, fromEvent } from "rxjs";
 import { takeUntil, debounceTime } from "rxjs/operators";
-import undefined = require("firebase/empty-import");
+// import undefined = require("firebase/empty-import");
 
 @Component({
   selector: "app-completion-progress",
@@ -524,7 +524,10 @@ export class CompletionProgressComponent implements OnInit {
         }
       ],
       tooltip: {
-        trigger: "axis"
+        trigger: "axis",
+        triggerOn : "click",
+        enterable : true,
+        transitionDuration : 0
       },
       legend: {
         data: arrTitle,
