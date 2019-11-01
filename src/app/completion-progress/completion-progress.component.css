@@ -1,3 +1,45 @@
+.block {
+  width: 150px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  resize: both;
+  overflow: auto;
+  max-height: 150px;
+  max-width: 200px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 50px;
+  background: white;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.editMessage {
+  width: 70%;
+  resize: none;
+  border: unset;
+}
+
+.disappear {
+  display: none;
+}
+
+.showMessage {
+  width: 70%;
+  word-break: break-all;
+  white-space: normal;
+  overflow-y: scroll;
+}
+
+.info {
+  width: 150px;
+  white-space: normal;
+  background: white;
+  border: 1px solid black;
+  padding: 5px;
+}
+
 .title {
   transform: rotate(-90deg);
   height: 400px;
@@ -10,7 +52,7 @@
 }
 
 .line::after {
-  content: '';
+  content: "";
   display: block;
   width: 50%;
   position: absolute;
@@ -25,9 +67,4 @@ input[type="file"] {
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
-}
-
-canvas {
-  width: 100%!important;
-  height: 75vh;
 }
