@@ -30,7 +30,7 @@
     "primeng": "^6.1.7",
     "rxjs": "6.3.3",
     "rxjs-compat": "^6.1.0",
-    "xlsx": "^0.15.1",
+    "xlsx": "^0.17.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
